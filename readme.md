@@ -51,28 +51,8 @@ This project currently includes the following features:
 
 ## Demo
 
-You can see the project in action at: [https://tu-sitio-web.com/argestan](https://tu-sitio-web.com/argestan) _(Reemplaza esta URL con la tuya)_
+You can see the project in action at: 
 
-![Argestan Timer Demo](ruta/a/tu/imagen.gif) _(Reemplaza con la ruta a tu imagen)_
-
-This demo showcases the timer functionality and the visual alert when the timer reaches zero.
-
-## Project Structure
-
-argestan-gym-dev-utilities/
-├── index.html # Main HTML file
-├── styles/
-│ └── styles.css # CSS stylesheet
-└── scripts/
-├── main.js # Main JavaScript file
-├── showDate.js # Module for displaying the date
-├── showTime.js # Module for displaying the time
-└── timer.js # Module for the timer functionality
-└── README.md # This file
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit pull requests for bug fixes, new features, or improvements. Please follow the existing code style and include clear explanations of your changes.
 
 ## Future Enhancements
 
