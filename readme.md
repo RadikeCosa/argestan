@@ -36,7 +36,7 @@ This project currently includes the following features:
 
 ## Installation
 
-1.  Clone the repository: `git clone https://github.com/[your-username]/argestan-gym-dev-utilities.git`
+1.  Clone the repository: `https://github.com/RadikeCosa/argestan`
 2.  Open the `index.html` file in your web browser.
 
 ## Usage
@@ -51,8 +51,7 @@ This project currently includes the following features:
 
 ## Demo
 
-You can see the project in action at: 
-
+You can see the project in action at: https://radikecosa.github.io/argestan/
 
 ## Future Enhancements
 
