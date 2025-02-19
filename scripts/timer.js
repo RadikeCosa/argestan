@@ -4,30 +4,35 @@ export function timer(displayId, increaseId, decreaseId, startId, resetId) {
   const $decrease = document.getElementById(decreaseId);
   const $start = document.getElementById(startId);
   const $reset = document.getElementById(resetId);
-  const $timerContainer = document.querySelector(".timer-container"); // Obtén el contenedor del timer
+  const $timerContainer = document.querySelector(".timer-container");
 
-  let startTime = 10; // Tiempo inicial en segundos (40 minutos)
+  const INITIAL_TIME_SECONDS = 2400; // 40 minutes
+  let timerDurationSeconds = INITIAL_TIME_SECONDS;
   let timerInterval;
   let isRunning = false;
 
-  function updateDisplay() {
-    const minutes = Math.floor(startTime / 60);
-    const seconds = startTime % 60;
-    $display.textContent = `${minutes.toString().padStart(2, "0")}:${seconds
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes.toString().padStart(2, "0")}:${remainingSeconds
       .toString()
       .padStart(2, "0")}`;
   }
 
-  updateDisplay(); // Mostrar el tiempo inicial al cargar la página
+  function updateDisplay() {
+    $display.textContent = formatTime(timerDurationSeconds);
+  }
+
+  updateDisplay();
 
   $increase.addEventListener("click", () => {
-    startTime += 60;
+    timerDurationSeconds += 60;
     updateDisplay();
   });
 
   $decrease.addEventListener("click", () => {
-    if (startTime >= 60) {
-      startTime -= 60;
+    if (timerDurationSeconds >= 60) {
+      timerDurationSeconds -= 60;
       updateDisplay();
     }
   });
@@ -36,22 +41,21 @@ export function timer(displayId, increaseId, decreaseId, startId, resetId) {
     if (isRunning) {
       clearInterval(timerInterval);
       $start.textContent = "Start";
+      $timerContainer.classList.remove("blink"); // Stop blinking if paused
     } else {
       timerInterval = setInterval(() => {
-        if (startTime > 0) {
-          startTime--;
+        if (timerDurationSeconds > 0) {
+          timerDurationSeconds--;
           updateDisplay();
         } else {
           clearInterval(timerInterval);
           isRunning = false;
           $start.textContent = "Start";
-
-          // Alarma visual: parpadeo del fondo
-          $timerContainer.classList.add("blink");
+          $timerContainer.classList.add("blink"); // Start blinking
 
           setTimeout(() => {
-            $timerContainer.classList.remove("blink");
-          }, 6000); // Parpadea durante 6 segundos
+            $timerContainer.classList.remove("blink"); // Stop blinking after 6s
+          }, 6000);
         }
       }, 1000);
       $start.textContent = "Pause";
@@ -63,7 +67,8 @@ export function timer(displayId, increaseId, decreaseId, startId, resetId) {
     clearInterval(timerInterval);
     isRunning = false;
     $start.textContent = "Start";
-    startTime = 40 * 60; // Restablecer a 40 minutos
+    timerDurationSeconds = INITIAL_TIME_SECONDS;
     updateDisplay();
+    $timerContainer.classList.remove("blink"); // Stop blinking on reset
   });
 }
