@@ -18,6 +18,7 @@ body {
   font-family: "Allerta Stencil", serif;
   font-weight: 400;
   font-style: normal;
+  display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--camouflage-green);
@@ -37,9 +38,22 @@ header {
   left: 0;
 }
 
+#quotes {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1rem;
+  max-width: 80%;
+  margin: 0 0.1rem;
+  text-align: center;
+  padding: 1rem;
+  border-left: 4px solid var(--camouflage-dark-brown);
+  background-color: var(--camouflage-beige);
+  color: var(--camouflage-dark-brown);
+  overflow-wrap: break-word; /* Para manejar frases largas */
+}
+
 footer {
   width: 100%;
-
   text-align: center;
   background-color: var(--camouflage-grey);
   color: var(--camouflage-dark-brown);
@@ -71,6 +85,7 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
   text-align: center;
 }
+
 #display {
   font-size: 3rem;
   font-weight: bold;
@@ -91,20 +106,24 @@ main {
   flex-direction: column;
   gap: 10px;
 }
+
 #time {
   margin-right: 3rem;
   font-size: 2.5rem;
   font-weight: bolder;
   color: var(--camouflage-dark-brown);
 }
+
 #date {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
 #location {
   font-size: 1rem;
   font-weight: bold;
 }
+
 .time,
 .actions {
   display: flex;
@@ -130,6 +149,7 @@ button:hover {
 button:focus {
   outline: 2px solid var(--camouflage-grey);
 }
+
 /* Estilos CSS para el parpadeo */
 .blink {
   animation: blinker 1s linear infinite; /* Parpadeo suave */
