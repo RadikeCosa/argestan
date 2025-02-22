@@ -8,10 +8,10 @@
   --camouflage-black: #000000;
   --camouflage-grey: #d3d3d3;
 }
-
 html,
 body {
   height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,24 +20,45 @@ body {
   font-style: normal;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Distribuye header, main y footer */
   align-items: center;
   background-color: var(--camouflage-green);
   color: var(--camouflage-beige);
+  overflow: hidden; /* Evita scroll si no se necesita */
 }
 
 header {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   background-color: var(--camouflage-grey);
   color: var(--camouflage-dark-brown);
+  /* Se utiliza sticky o posición normal según convenga */
   position: sticky;
   top: 0;
-  z-index: 100; /* Asegura que el header se vea por encima de otros elementos */
+  z-index: 100;
 }
 
+main {
+  width: 100%;
+  flex: 1; /* Hace que main ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* Padding interno para separar el contenido */
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: var(--camouflage-grey);
+  color: var(--camouflage-dark-brown);
+  padding: 0.5rem; /* Ajusta el padding para mantenerlo prolijo */
+  /* Se elimina posición fixed para que forme parte del flujo */
+}
 #quotes {
   font-style: italic;
   font-weight: bold;
@@ -50,25 +71,6 @@ header {
   background-color: var(--camouflage-beige);
   color: var(--camouflage-dark-brown);
   overflow-wrap: break-word; /* Para manejar frases largas */
-}
-
-footer {
-  width: 100%;
-  text-align: center;
-  background-color: var(--camouflage-grey);
-  color: var(--camouflage-dark-brown);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding-top: 5rem; /* Para que no se solape con el header */
-  padding-bottom: 5rem; /* Para que no se solape con el footer */
 }
 
 .title {
