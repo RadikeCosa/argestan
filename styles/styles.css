@@ -58,7 +58,7 @@ main {
 }
 
 .title {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   text-align: center;
 }
 
@@ -93,6 +93,9 @@ main {
 }
 #time {
   margin-right: 3rem;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--camouflage-dark-brown);
 }
 #date {
   margin-left: 2rem;
