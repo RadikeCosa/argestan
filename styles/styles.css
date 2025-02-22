@@ -98,9 +98,13 @@ main {
   color: var(--camouflage-dark-brown);
 }
 #date {
-  margin-left: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
-
+#location {
+  font-size: 1rem;
+  font-weight: bold;
+}
 .time,
 .actions {
   display: flex;
