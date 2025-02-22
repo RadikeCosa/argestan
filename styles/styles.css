@@ -26,16 +26,16 @@ body {
 }
 
 header {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   background-color: var(--camouflage-grey);
   color: var(--camouflage-dark-brown);
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
+  z-index: 100; /* Asegura que el header se vea por encima de otros elementos */
 }
 
 #quotes {
