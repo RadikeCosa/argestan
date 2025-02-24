@@ -1,24 +1,81 @@
+/* reset.css */
+
+/* Reseteo general de elementos */
+html,
 body,
-header,
-main,
-footer,
-figure,
-blockquote,
-figcaption,
-time,
-div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p,
+blockquote,
+figure,
+figcaption,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+pre,
+code,
+address,
+em,
+strong,
 a,
-img {
+abbr,
+acronym,
+img,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+footer,
+header,
+hgroup,
+mark,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-/* Resetear listas (si las usas en el futuro) */
+/* Resetear listas */
 ol,
 ul {
   list-style: none;
+}
+
+/* Resetear tablas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Resetear enlaces */
@@ -27,7 +84,7 @@ a {
   color: inherit;
 }
 
-/* Box-sizing */
+/* Box-sizing para un mejor control del ancho y alto */
 *,
 *::before,
 *::after {
@@ -37,12 +94,24 @@ a {
 /* Estilos básicos para el body */
 body {
   line-height: 1;
-  font-family: sans-serif; /* Puedes cambiarla */
 }
 
-/* Imágenes responsive */
+/* Hacer las imágenes responsive */
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Resetear algunos elementos de formulario (si los usas) */
+button,
+input,
+select,
+textarea {
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina padding predeterminados */
+  border: 0; /* Elimina bordes predeterminados */
+  font-size: 100%; /* Usa el tamaño de fuente del elemento padre */
+  font-family: inherit; /* Usa la fuente del elemento padre */
+  vertical-align: baseline; /* Alineación vertical */
 }
