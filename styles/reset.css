@@ -1,0 +1,48 @@
+body,
+header,
+main,
+footer,
+figure,
+blockquote,
+figcaption,
+time,
+div,
+p,
+a,
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Resetear listas (si las usas en el futuro) */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Resetear enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Estilos básicos para el body */
+body {
+  line-height: 1;
+  font-family: sans-serif; /* Puedes cambiarla */
+}
+
+/* Imágenes responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

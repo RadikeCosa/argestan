@@ -1,164 +1,45 @@
 :root {
-  --camouflage-green: #4b5320;
-  --camouflage-brown: #6d4c41;
-  --camouflage-dark-green: #2f4f2f;
-  --camouflage-olive: #808000;
-  --camouflage-beige: #f5f5dc;
-  --camouflage-dark-brown: #3b2f2f;
-  --camouflage-black: #000000;
-  --camouflage-grey: #d3d3d3;
+  --camouflage-green: #556b2f; /* Verde oliva más natural */
+  --camouflage-brown: #8b4513; /* Marrón tierra más intenso */
+  --camouflage-sand: #f4f5dc; /* Beige arenoso, más oscuro y con mejor contraste */
+  --camouflage-dark-green: #36454f; /* Gris oscuro, reemplaza el negro para mejor legibilidad */
+  --camouflage-light-brown: #a0522d; /* Marrón claro para detalles y acentos */
+  --camouflage-dark-brown: #4f3a21; /* Marrón oscuro más sutil */
 }
-html,
+
 body {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: "Allerta Stencil", serif;
-  font-weight: 400;
-  font-style: normal;
+  line-height: 1.5;
+  font-family: "Allerta Stencil", sans-serif; /* Fuente principal */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribuye header, main y footer */
+  height: 100%;
+  background-color: var(--camouflage-sand);
   align-items: center;
-  background-color: var(--camouflage-green);
-  color: var(--camouflage-beige);
-  overflow: hidden; /* Evita scroll si no se necesita */
-}
-
-header {
-  width: 100%;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--camouflage-grey);
-  color: var(--camouflage-dark-brown);
-  /* Se utiliza sticky o posición normal según convenga */
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
-
-main {
+header {
+  height: 15vh;
+  background-color: var(--camouflage-green);
   width: 100%;
-  flex: 1; /* Hace que main ocupe el espacio restante */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main {
+  height: 70vh;
+  background-color: var(--camouflage-brown);
+  width: 80%;
+  display: grid;
+  grid-template-columns: 50% 50%;
   justify-content: center;
-  padding: 1rem; /* Padding interno para separar el contenido */
 }
 
 footer {
+  height: 15vh;
+  background-color: var(--camouflage-green);
   width: 100%;
-  text-align: center;
-  background-color: var(--camouflage-grey);
-  color: var(--camouflage-dark-brown);
-  padding: 0.5rem; /* Ajusta el padding para mantenerlo prolijo */
-  /* Se elimina posición fixed para que forme parte del flujo */
-}
-#quotes {
-  font-style: italic;
-  font-weight: bold;
-  font-size: 1rem;
-  max-width: 80%;
-  margin: 0 0.1rem;
-  text-align: center;
-  padding: 1rem;
-  border-left: 4px solid var(--camouflage-dark-brown);
-  background-color: var(--camouflage-beige);
-  color: var(--camouflage-dark-brown);
-  overflow-wrap: break-word; /* Para manejar frases largas */
-}
-
-.title {
-  margin-top: 0.8rem;
-  text-align: center;
-}
-
-.timer-container {
-  width: 90%;
-  max-width: 600px;
-  background-color: var(--camouflage-dark-green);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-  text-align: center;
-}
-
-#display {
-  font-size: 3rem;
-  font-weight: bold;
-  background-color: var(--camouflage-beige);
-  color: var(--camouflage-dark-brown);
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  margin: 1rem auto; /* Centra horizontalmente */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 150px; /* Ajusta el tamaño mínimo para no hacerlo demasiado estrecho */
-  width: fit-content; /* Solo ocupa el ancho necesario */
-}
-
-.controls {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-#time {
-  margin-right: 3rem;
-  font-size: 2.5rem;
-  font-weight: bolder;
-  color: var(--camouflage-dark-brown);
-}
-
-#date {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-#location {
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.time,
-.actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-button {
-  background-color: var(--camouflage-brown);
-  color: var(--camouflage-beige);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease-in-out;
-}
-
-button:hover {
-  background-color: var(--camouflage-dark-brown);
-}
-
-button:focus {
-  outline: 2px solid var(--camouflage-grey);
-}
-
-/* Estilos CSS para el parpadeo */
-.blink {
-  animation: blinker 1s linear infinite; /* Parpadeo suave */
-}
-
-@keyframes blinker {
-  50% {
-    background-color: #f00; /* Color de fondo rojo (puedes personalizarlo) */
-  }
+  align-items: center;
 }
